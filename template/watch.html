@@ -1,0 +1,12 @@
+<div layout="row">
+    <div class="card-view">
+        <div class="card-view-inner">
+            <div layout="row" class="md-subhead updated-time">
+                <div id="player"></div>
+            </div>
+            <div>
+                <a class="channel-quality" ng-repeat="(key, value) in channelInfo.bitrates" ngclick="play(value)">{{key}}</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700italic,700,500italic' rel='stylesheet' type='text/css' />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tiny Antenna</title>
+		<link rel="stylesheet" href="css/style.css" />
+		
+		
+		
+	</head>
+	<body ng-app="tinyAntenna" ng-controller="mainController">
+		<section layout="row" flex class="content-wrapper" >
+			<md-sidenav
+				class="md-sidenav-left"
+				md-component-id="left"
+				md-is-locked-open="$mdMedia('gt-sm')"
+				md-whiteframe="4" ng-if="!isLogin">
+				<div class="header-outer-wrapper desktop">
+					<div class="logo">
+						Tiny Antenna
+					</div>
+				</div>
+				  <md-toolbar class="account-side-bar">
+						<h1 class="md-toolbar-tools"><i class="material-icons">account_circle</i> <span>{{userName}}</span></h1>
+				  </md-toolbar>
+				  <md-content ng-controller="sideBarController">
+					
+					<md-list-item ui-sref="channels">
+						<p> <i class="material-icons">dashboard</i> Channels </p>
+					</md-list-item>
+				  </md-content>
+	
+				</md-sidenav>
+			<md-content flex>
+				<div class="header-outer-wrapper " ng-class="isLogin?'':'mobile'">
+					<div class="logo">
+						<a ng-if="!isLogin" aria-label="menu" ng-click="navOpen()" class="hamburger">
+							<i  class="fa fa-bars" aria-hidden="true"></i>
+						</a>
+					Tiny Antenna
+					</div>
+				</div>
+				
+				<div class="outer-wrapper">	
+				<ui-view></ui-view>
+				<div class="credit-wrapper">
+					made with <i class="fa fa-heart" aria-hidden="true"></i> Tiny antenna
+				</div>
+			</div>
+			</md-content>
+		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<!-- Angular Material requires Angular.js Libraries -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+		<!-- Angular Material Library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@0.3.12/dist/clappr.min.js"></script>	
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>	
+		
+		
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>	
+		
+		<script src="js/hammer.min.js"></script>
+		<script src="js/angular.hammer.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-touch.js"></script>
+		
+		<script src="js/script.js"></script>
+	</body>
+</html>
