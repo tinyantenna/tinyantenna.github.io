@@ -240,7 +240,7 @@ var app = angular.module("tinyAntenna", ['ngMaterial', 'ngMessages', 'ui.router'
 					xhrSetup: function(xhr, url) {
 						var tsreg = /.ts/i;
 						if(tsreg.test(url)){
-							url = url.replace(siteUrl+"api/","http://sbglrecdnems03.cdnsrv.jio.com/jiotv.live.cdn.jio.com/");
+							url = url.replace(siteUrl+"api/","https://sbglrecdnems03.cdnsrv.jio.com/jiotv.live.cdn.jio.com/");
 						}else{
 							url =  url+"?channelId="+$stateParams.channelId+"&token="+user.token;
 						}
